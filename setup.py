@@ -32,7 +32,12 @@ setup(
     packages=["ansiblelinttojunitxml"],
     package_dir={"ansible-lint-to-junit-xml": "ansiblelinttojunitxml"},
     include_package_data=True,
-    install_requires=[],
+    entry_points={
+        "console_scripts": [
+            "ansible-lint-to-junit-xml = ansiblelinttojunitxml.ansiblelinttojunitxml:main"
+        ]
+    },
+    install_requires=["ansible-lint"],
     license="MIT",
     zip_safe=False,
     keywords=["ansible", "lint", "junit", "report"],
