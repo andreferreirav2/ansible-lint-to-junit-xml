@@ -37,7 +37,7 @@ setup(
             "ansible-lint-to-junit-xml = ansiblelinttojunitxml.ansiblelinttojunitxml:main"
         ]
     },
-    install_requires=["ansible-lint"],
+    install_requires=[],
     license="MIT",
     zip_safe=False,
     keywords=["ansible", "lint", "junit", "report"],

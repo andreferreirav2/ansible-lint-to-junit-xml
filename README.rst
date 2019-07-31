@@ -48,6 +48,7 @@ Example
 
 Running ``ansible-lint`` on a file results in:
 ::  
+
     playbooks/test_playbook.yml:41: [E303] curl used in place of get_url or uri module
     playbooks/tasks/example_task.yml:28: [E601] Don't compare to literal True/False
 

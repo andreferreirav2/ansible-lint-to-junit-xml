@@ -1,18 +1,19 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
-
 python:
-  - "2.7"
-  - "3.5"
-  - "3.6"
-  - "pypy"
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: 
-  - pip install -r requirements.txt
-  - pip install tox-travis
-
-# command to run tests, e.g. python setup.py test
+- '2.7'
+- '3.5'
+- '3.6'
+- pypy
+install:
+- pip install -r requirements.txt
+- pip install tox-travis
 script:
-  - tox
+- tox
+deploy:
+  provider: pypi
+  skip_existing: true
+  on:
+    tags: true
+  user: andreferreirav2
+  password:
+    secure: Bm/yVfguKRnh3aoI9F1eTg+6JeTjH9TD0IUjycKOVl5iDWTYZrQ1IwsHA41fjugnDv7hBmn4zJPMtS0m//9lIXi8MhzUM9W433HLi4NEe2InGRh/HaVwIrunkqfZ3B7AyG7zlYJ0kB33QQoc70IDXGjdksZz3pcJYMlC/yYlSi7t+RkIeSSfqmZx0Vzev46lIvjT0IEpi9rP2oe3vVitRUjbiEgrO8NQk1M6MkHSS4amcn/MaMUNjJ0iNrpFi9XuxETvoeFIP4QzYc/oAGENYDNAvSIKLxNv1J5EXWD4oeuQQ0dxb82hN77FApF9iPof3nrV+xuVZC1tA8pKVN9EiYRg7sj4VKoVcIFW1zHG1VZa1LTwjOD4+TvpQpgwRpad/+xVt6U/Ll+GRnKU/8m6Wg3Sgt8st7ohNde4RmFqBDxg7DRUDwxI/P+2/2orW/aozNYyJBTdvD06uL9k8aEX/vLTSkhXbNlsD2juJl61t0o4+yv8eXj3QyxRzwTn9aHARbYyOa2272rGBQ7FFQlYme87T9TmqSfiU18uTTrK1M7KHJ7lFklwJ/FFPi1ifkxL9dzGCIM4go0yFKY/kZzw/FWNMzlrPFUQ1dZMAd8JtcOgvgwio+AEtiDxQm66VMZrHvHX+IOqEprXLlXnDUXoe1mss3tEQrEhMia32HoR6dY=
