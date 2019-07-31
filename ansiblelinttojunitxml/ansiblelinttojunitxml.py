@@ -57,9 +57,11 @@ def lint_to_junit_xml(lint_output):
             lint_error, filename, linenr
         )
 
-        testcase = ET.SubElement(testsuite, "testcase", name=lint_error)
+        testcase = ET.SubElement(
+            testsuite, "testcase", name="{}:{}".format(filename, linenr)
+        )
         ET.SubElement(
-            testcase, "failure", message=line, type="ansible-lint"
+            testcase, "failure", message=line, type=lint_error
         ).text = error_description
     return testsuite
 
